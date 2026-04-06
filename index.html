@@ -4,28 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO -->
-<title>БАЗА-99 — доска объявлений нового поколения | Запчасти коммерческого транспорта</title>
-<meta name="description" content="БАЗА-99 — интеллектуальная площадка для продажи и поиска б/у запчастей, узлов и агрегатов тягачей, прицепов, грузовиков и спецтехники. Telegram-бот с AI. Бесплатно.">
-<meta name="keywords" content="запчасти коммерческий транспорт, б/у запчасти тягач, купить запчасти грузовик, продать запчасти прицеп, разборка спецтехника, MAN DAF Volvo Scania Mercedes запчасти">
-<meta name="robots" content="index, follow">
+<!-- SEO Primary -->
+<title>БАЗА-99 — б/у запчасти для тягачей, грузовиков и спецтехники | Купить и продать</title>
+<meta name="description" content="БАЗА-99 — доска объявлений нового поколения. Продайте или найдите б/у запчасти, узлы и агрегаты для тягачей MAN, DAF, Volvo, Scania, Mercedes, Renault, Iveco. Telegram-бот с AI. Бесплатно.">
+<meta name="keywords" content="запчасти коммерческий транспорт, б/у запчасти тягач, купить запчасти грузовик, продать запчасти прицеп, разборка спецтехника, запчасти MAN, запчасти DAF, запчасти Volvo, запчасти Scania, запчасти Mercedes Actros, запчасти Renault, запчасти Iveco, КПП тягач, мост грузовик, двигатель б/у, гидравлика спецтехника, доска объявлений запчасти, Беларусь запчасти грузовик">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://suze-mart.github.io/base99-landing/">
+<meta name="theme-color" content="#09090b">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="БАЗА-99 — запчасти для коммерческого транспорта">
-<meta property="og:description" content="Соединяем тех, у кого есть — с теми, кто ищет. AI-бот в Telegram. Бесплатно.">
-<meta property="og:image" content="https://suze-mart.github.io/base99-landing/img/og-cover.jpg">
+<meta property="og:site_name" content="БАЗА-99">
+<meta property="og:title" content="БАЗА-99 — б/у запчасти для коммерческого транспорта">
+<meta property="og:description" content="Доска объявлений нового поколения. Продайте или найдите запчасти для тягачей, грузовиков, прицепов и спецтехники. AI-бот в Telegram. Бесплатно.">
+<meta property="og:image" content="https://suze-mart.github.io/base99-landing/img/logo-hero.png">
+<meta property="og:image:width" content="601">
+<meta property="og:image:height" content="415">
 <meta property="og:url" content="https://suze-mart.github.io/base99-landing/">
 <meta property="og:locale" content="ru_RU">
 
-<!-- Fonts -->
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="БАЗА-99 — б/у запчасти для коммерческого транспорта">
+<meta name="twitter:description" content="Доска объявлений нового поколения. AI-бот в Telegram. Бесплатно.">
+<meta name="twitter:image" content="https://suze-mart.github.io/base99-landing/img/logo-hero.png">
+
+<!-- Yandex / Google -->
+<meta name="google" content="notranslate">
+
+<!-- Preload critical assets -->
+<link rel="preload" as="image" type="image/webp" href="img/hero-bg.webp">
+<link rel="preload" as="image" type="image/webp" href="img/logo-hero.webp">
+
+<!-- Preconnect & Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+<link rel="icon" type="image/png" href="img/logo-hero.png">
+<link rel="apple-touch-icon" href="img/logo-main.jpg">
 
 <style>
 /* ═══════════════════════════════════════
@@ -84,7 +102,7 @@ a{color:inherit;text-decoration:none}
 }
 .hero-bg{
   position:absolute;inset:0;
-  background:url('img/hero-bg.jpg') center/cover no-repeat;
+  background:url('img/hero-bg.webp') center/cover no-repeat;
   filter:brightness(.25) saturate(.7);
 }
 .hero-grad{
@@ -356,7 +374,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 24px;text-align:center}
   <div class="hero-bg" role="presentation"></div>
   <div class="hero-grad" role="presentation"></div>
   <div class="hero-content">
-    <img src="img/logo-hero.png" alt="БАЗА-99" class="hero-logo">
+    <picture><source srcset="img/logo-hero.webp" type="image/webp"><img src="img/logo-hero.png" alt="БАЗА-99 — доска объявлений запчастей коммерческого транспорта" class="hero-logo"></picture>
     <h1>Соединяем тех, у&nbsp;кого есть — с&nbsp;теми, кто&nbsp;ищет</h1>
     <p class="hero-gen">Доска объявлений нового поколения</p>
     <p>Запчасти, узлы, агрегаты и&nbsp;системы для&nbsp;коммерческого транспорта и&nbsp;спецтехники. AI&#8209;бот. Без&nbsp;регистрации. Бесплатно.</p>
@@ -386,7 +404,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 24px;text-align:center}
     </div>
     <div class="problem-grid">
       <article class="problem-card">
-        <img src="img/problem-seller.jpg" alt="Запчасти на складе" loading="lazy">
+        <picture><source srcset="img/problem-seller.webp" type="image/webp"><img src="img/problem-seller.jpg" alt="Б/У запчасти тягачей и грузовиков на складе — продать через БАЗА-99" loading="lazy"></picture>
         <div class="problem-body">
           <span class="problem-tag tag-red">Продавец</span>
           <h3>Запчасти лежат без&nbsp;дела</h3>
@@ -394,7 +412,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 24px;text-align:center}
         </div>
       </article>
       <article class="problem-card">
-        <img src="img/problem-buyer.jpg" alt="Поиск запчастей" loading="lazy">
+        <picture><source srcset="img/problem-buyer.webp" type="image/webp"><img src="img/problem-buyer.jpg" alt="Поиск б/у запчастей для коммерческого транспорта — БАЗА-99" loading="lazy"></picture>
         <div class="problem-body">
           <span class="problem-tag tag-yellow">Покупатель</span>
           <h3>Не можете найти деталь?</h3>
@@ -511,7 +529,7 @@ footer{border-top:1px solid var(--c-border);padding:40px 24px;text-align:center}
   <h2>Попробуйте прямо сейчас</h2>
   <p>Бесплатно. Без регистрации на сайте.<br>Telegram уже есть — больше ничего не нужно.</p>
   <a href="https://t.me/base_99_bot?start=utm_source-landing_utm_medium-footer_utm_campaign-base99" class="bot-cta" target="_blank" rel="noopener">
-    <img src="img/logo-main.jpg" alt="БАЗА-99 Менеджер-БОТ" class="bot-cta-logo" loading="lazy">
+    <picture><source srcset="img/logo-main.webp" type="image/webp"><img src="img/logo-main.jpg" alt="БАЗА-99 Менеджер-БОТ Telegram" class="bot-cta-logo" loading="lazy"></picture>
     <span class="bot-cta-text">
       <span class="bot-cta-title">Перейти в бота</span>
       <span class="bot-cta-handle">@base_99_bot</span>
@@ -529,13 +547,13 @@ footer{border-top:1px solid var(--c-border);padding:40px 24px;text-align:center}
     </div>
     <div class="channels-grid">
       <div class="channel-card channel-sell">
-        <img src="img/logo-sell.jpg" alt="Продажа" class="channel-logo" loading="lazy">
+        <picture><source srcset="img/logo-sell.webp" type="image/webp"><img src="img/logo-sell.jpg" alt="Канал продажи запчастей БАЗА-99" class="channel-logo" loading="lazy"></picture>
         <h3>Продаю</h3>
         <p>Актуальные объявления о&nbsp;продаже запчастей, узлов и&nbsp;агрегатов</p>
         <a href="https://t.me/base99_sell" class="channel-link link-red" target="_blank" rel="noopener">@base99_sell →</a>
       </div>
       <div class="channel-card channel-buy">
-        <img src="img/logo-buy.jpg" alt="Ищу" class="channel-logo" loading="lazy">
+        <picture><source srcset="img/logo-buy.webp" type="image/webp"><img src="img/logo-buy.jpg" alt="Канал поиска запчастей БАЗА-99" class="channel-logo" loading="lazy"></picture>
         <h3>Ищу</h3>
         <p>Разместите запрос — продавцы сами откликнутся</p>
         <a href="https://t.me/base99_buy" class="channel-link link-yellow" target="_blank" rel="noopener">@base99_buy →</a>
@@ -566,18 +584,35 @@ window.addEventListener('scroll',()=>{
 },{passive:true});
 </script>
 
-<!-- Schema.org -->
+<!-- Schema.org: WebApplication -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"WebApplication",
   "name":"БАЗА-99",
-  "description":"Интеллектуальная площадка для продажи и поиска б/у запчастей, узлов и агрегатов коммерческого транспорта и спецтехники",
+  "alternateName":"База-99",
+  "headline":"Доска объявлений нового поколения — б/у запчасти для коммерческого транспорта",
+  "description":"Продайте или найдите б/у запчасти, узлы и агрегаты для тягачей MAN, DAF, Volvo, Scania, Mercedes, Renault, Iveco. AI-бот в Telegram. Бесплатно.",
   "url":"https://suze-mart.github.io/base99-landing/",
   "applicationCategory":"BusinessApplication",
   "operatingSystem":"Telegram",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"BYN"},
-  "author":{"@type":"Organization","name":"БАЗА-99","url":"https://t.me/base_99_bot"}
+  "inLanguage":"ru",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"BYN","availability":"https://schema.org/InStock"},
+  "author":{"@type":"Organization","name":"БАЗА-99","url":"https://t.me/base_99_bot"},
+  "image":"https://suze-mart.github.io/base99-landing/img/logo-hero.png"
+}
+</script>
+<!-- Schema.org: FAQPage (SEO boost) -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Что такое БАЗА-99?","acceptedAnswer":{"@type":"Answer","text":"БАЗА-99 — это доска объявлений нового поколения для продажи и поиска б/у запчастей, узлов и агрегатов коммерческого транспорта и спецтехники. Работает через Telegram-бот с искусственным интеллектом."}},
+    {"@type":"Question","name":"Сколько стоит размещение объявления?","acceptedAnswer":{"@type":"Answer","text":"Размещение объявлений на БАЗА-99 полностью бесплатное. Без комиссий и скрытых платежей."}},
+    {"@type":"Question","name":"Какие марки техники поддерживаются?","acceptedAnswer":{"@type":"Answer","text":"БАЗА-99 принимает запчасти для любого коммерческого транспорта: MAN, DAF, Volvo, Scania, Mercedes, Renault, Iveco и других марок тягачей, грузовиков, прицепов и спецтехники."}},
+    {"@type":"Question","name":"Как опубликовать объявление?","acceptedAnswer":{"@type":"Answer","text":"Откройте бота @base_99_bot в Telegram, опишите деталь своими словами и добавьте фото. AI автоматически создаст структурированную карточку и опубликует в канал."}}
+  ]
 }
 </script>
 
