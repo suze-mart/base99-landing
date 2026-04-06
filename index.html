@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>БАЗА-99 — доска объявлений нового поколения | Запчасти коммерческого транспорта</title>
+<meta name="description" content="БАЗА-99 — интеллектуальная площадка для продажи и поиска б/у запчастей, узлов и агрегатов тягачей, прицепов, грузовиков и спецтехники. Telegram-бот с AI. Бесплатно.">
+<meta name="keywords" content="запчасти коммерческий транспорт, б/у запчасти тягач, купить запчасти грузовик, продать запчасти прицеп, разборка спецтехника, MAN DAF Volvo Scania Mercedes запчасти">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://suze-mart.github.io/base99-landing/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="БАЗА-99 — запчасти для коммерческого транспорта">
+<meta property="og:description" content="Соединяем тех, у кого есть — с теми, кто ищет. AI-бот в Telegram. Бесплатно.">
+<meta property="og:image" content="https://suze-mart.github.io/base99-landing/img/og-cover.jpg">
+<meta property="og:url" content="https://suze-mart.github.io/base99-landing/">
+<meta property="og:locale" content="ru_RU">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+
+<style>
+/* ═══════════════════════════════════════
+   RESET & TOKENS
+   ═══════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --c-bg:#09090b;--c-bg2:#0f0f12;--c-surface:#151518;--c-surface2:#1a1a1f;
+  --c-border:#222228;--c-border-light:#2a2a32;
+  --c-text:#ededef;--c-text-secondary:#8e8e96;--c-text-dim:#5a5a62;
+  --c-blue:#3b82f6;--c-blue-glow:rgba(59,130,246,.12);
+  --c-red:#c0392b;--c-red-soft:rgba(192,57,43,.12);
+  --c-yellow:#d4a017;--c-yellow-soft:rgba(212,160,23,.12);
+  --c-green:#22c55e;--c-green-glow:rgba(34,197,94,.25);
+  --radius:16px;--radius-lg:24px;
+  --max-w:1120px;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--c-bg);color:var(--c-text);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+
+/* ═══ UTILITY ═══ */
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:16px 0;
+  background:rgba(9,9,11,.75);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s,background .3s;
+}
+.nav.scrolled{border-bottom-color:var(--c-border);background:rgba(9,9,11,.92)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.nav-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px}
+.nav-brand img{width:32px;height:32px;border-radius:8px}
+.nav-cta{
+  padding:10px 24px;font-size:14px;font-weight:600;
+  background:var(--c-green);color:#fff;border-radius:10px;
+  transition:transform .15s,box-shadow .15s;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 16px var(--c-green-glow)}
+
+/* ═══════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════ */
+.hero{
+  position:relative;min-height:100vh;min-height:100dvh;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('img/hero-bg.jpg') center/cover no-repeat;
+  filter:brightness(.25) saturate(.7);
+}
+.hero-grad{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 35%,rgba(59,130,246,.08),transparent),
+    linear-gradient(180deg,rgba(9,9,11,.4) 0%,rgba(9,9,11,.95) 85%,var(--c-bg) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  text-align:center;padding:120px 24px 80px;max-width:760px;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 18px;border-radius:100px;
+  background:var(--c-surface);border:1px solid var(--c-border);
+  font-size:13px;font-weight:600;color:var(--c-blue);
+  margin-bottom:28px;
+  animation:fadeInUp .6s ease-out;
+}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--c-green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{
+  font-size:clamp(32px,6vw,56px);font-weight:900;line-height:1.1;
+  letter-spacing:-.02em;margin-bottom:8px;
+  animation:fadeInUp .6s ease-out .1s both;
+}
+.hero-gen{
+  font-size:clamp(18px,3vw,24px);font-weight:600;
+  color:var(--c-blue);margin-bottom:24px;
+  animation:fadeInUp .6s ease-out .15s both;
+}
+.hero p{
+  font-size:clamp(16px,2vw,19px);color:var(--c-text-secondary);
+  max-width:580px;margin:0 auto 44px;line-height:1.6;
+  animation:fadeInUp .6s ease-out .2s both;
+}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+.cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeInUp .6s ease-out .3s both}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:16px 40px;font-size:16px;font-weight:700;font-family:var(--font);
+  border-radius:14px;border:none;cursor:pointer;
+  transition:transform .15s,box-shadow .15s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{
+  background:linear-gradient(135deg,#16a34a,var(--c-green));color:#fff;
+  box-shadow:0 8px 30px var(--c-green-glow);
+}
+.btn-primary:hover{box-shadow:0 12px 40px rgba(34,197,94,.35)}
+.btn-ghost{
+  background:var(--c-surface);border:1px solid var(--c-border);color:var(--c-text);
+}
+.btn-ghost:hover{border-color:var(--c-border-light);background:var(--c-surface2)}
+.hero-note{font-size:13px;color:var(--c-text-dim);margin-top:20px;animation:fadeInUp .6s ease-out .4s both}
+
+/* ═══════════════════════════════════════
+   SOCIAL PROOF / STATS BAR
+   ═══════════════════════════════════════ */
+.stats-bar{
+  border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border);
+  background:var(--c-bg2);padding:40px 0;
+}
+.stats-grid{
+  display:flex;justify-content:center;gap:48px;flex-wrap:wrap;
+}
+.stat{text-align:center}
+.stat-num{font-size:32px;font-weight:900;color:var(--c-blue)}
+.stat-label{font-size:13px;color:var(--c-text-dim);margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+
+/* ═══════════════════════════════════════
+   SECTIONS COMMON
+   ═══════════════════════════════════════ */
+.section{padding:100px 0}
+.section-head{text-align:center;margin-bottom:64px}
+.section-tag{
+  display:inline-block;font-size:12px;font-weight:700;
+  text-transform:uppercase;letter-spacing:3px;
+  color:var(--c-blue);margin-bottom:12px;
+}
+.section-title{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.01em}
+.section-sub{font-size:16px;color:var(--c-text-secondary);max-width:560px;margin:16px auto 0}
+
+/* ═══════════════════════════════════════
+   PROBLEM (block 2)
+   ═══════════════════════════════════════ */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.problem-card{
+  border-radius:var(--radius-lg);overflow:hidden;
+  background:var(--c-surface);border:1px solid var(--c-border);
+  transition:transform .3s,box-shadow .3s;
+}
+.problem-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.problem-card img{width:100%;height:220px;object-fit:cover;filter:brightness(.55) saturate(.8)}
+.problem-body{padding:28px 28px 32px}
+.problem-tag{
+  display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;
+  letter-spacing:2px;padding:5px 14px;border-radius:8px;margin-bottom:14px;
+}
+.tag-red{background:var(--c-red-soft);color:var(--c-red)}
+.tag-yellow{background:var(--c-yellow-soft);color:var(--c-yellow)}
+.problem-card h3{font-size:20px;font-weight:700;margin-bottom:10px}
+.problem-card p{font-size:15px;color:var(--c-text-secondary);line-height:1.65}
+
+/* ═══ ACCENT STRIP ═══ */
+.accent-strip{
+  max-width:800px;margin:-32px auto 0;padding:28px 36px;
+  background:var(--c-surface2);border:1px solid var(--c-border-light);
+  border-radius:var(--radius);text-align:center;position:relative;z-index:1;
+}
+.accent-strip p{font-size:15px;color:var(--c-text-secondary);line-height:1.65}
+.accent-strip strong{color:var(--c-text)}
+
+/* ═══════════════════════════════════════
+   STEPS (block 3)
+   ═══════════════════════════════════════ */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step-card{
+  background:var(--c-surface);border:1px solid var(--c-border);
+  border-radius:var(--radius-lg);padding:32px 24px;text-align:center;
+  position:relative;transition:transform .3s,box-shadow .3s;
+}
+.step-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.step-card::before{
+  content:attr(data-step);
+  display:flex;align-items:center;justify-content:center;
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,var(--c-blue),#60a5fa);
+  color:#fff;font-size:20px;font-weight:800;
+  margin:0 auto 20px;
+  box-shadow:0 4px 20px var(--c-blue-glow);
+}
+.step-card h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.step-card p{font-size:14px;color:var(--c-text-secondary)}
+
+/* ═══════════════════════════════════════
+   AUDIENCE (block 4)
+   ═══════════════════════════════════════ */
+.audience-section{background:var(--c-bg2);border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border)}
+.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;margin:0 auto}
+.audience-card{
+  display:flex;align-items:flex-start;gap:16px;
+  background:var(--c-surface);border:1px solid var(--c-border);
+  border-radius:var(--radius);padding:24px;
+  transition:transform .2s,border-color .2s;
+}
+.audience-card:hover{transform:translateY(-2px);border-color:var(--c-border-light)}
+.audience-icon{font-size:32px;flex-shrink:0;line-height:1}
+.audience-card h3{font-size:15px;font-weight:700;margin-bottom:4px}
+.audience-card p{font-size:14px;color:var(--c-text-secondary)}
+
+/* ═══════════════════════════════════════
+   WHY (block 5)
+   ═══════════════════════════════════════ */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.why-card{
+  display:flex;gap:16px;align-items:flex-start;
+  background:var(--c-surface);border:1px solid var(--c-border);
+  border-radius:var(--radius);padding:28px;
+  transition:transform .2s,border-color .2s;
+}
+.why-card:hover{transform:translateY(-2px);border-color:var(--c-border-light)}
+.why-icon{font-size:28px;flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--c-surface2);border-radius:12px}
+.why-card h3{font-size:15px;font-weight:700;margin-bottom:4px}
+.why-card p{font-size:14px;color:var(--c-text-secondary)}
+
+/* ═══════════════════════════════════════
+   CHANNELS (block 6)
+   ═══════════════════════════════════════ */
+.channels-grid{display:flex;gap:28px;justify-content:center;flex-wrap:wrap}
+.channel-card{
+  flex:1;min-width:300px;max-width:420px;
+  background:var(--c-surface);border:1px solid var(--c-border);
+  border-radius:var(--radius-lg);padding:40px 36px;text-align:center;
+  transition:transform .3s,box-shadow .3s;
+}
+.channel-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.channel-sell{border-color:rgba(192,57,43,.2)}
+.channel-sell:hover{border-color:rgba(192,57,43,.4)}
+.channel-buy{border-color:rgba(212,160,23,.2)}
+.channel-buy:hover{border-color:rgba(212,160,23,.4)}
+.channel-logo{width:64px;height:64px;border-radius:16px;margin:0 auto 20px;object-fit:cover}
+.channel-card h3{font-size:22px;font-weight:800;margin-bottom:6px}
+.channel-card p{font-size:14px;color:var(--c-text-secondary);margin-bottom:20px}
+.channel-link{
+  display:inline-block;padding:10px 28px;border-radius:10px;
+  font-size:14px;font-weight:600;transition:background .2s;
+}
+.link-red{background:var(--c-red-soft);color:var(--c-red)}
+.link-red:hover{background:rgba(192,57,43,.2)}
+.link-yellow{background:var(--c-yellow-soft);color:var(--c-yellow)}
+.link-yellow:hover{background:rgba(212,160,23,.2)}
+
+/* ═══════════════════════════════════════
+   FINAL CTA (block 7)
+   ═══════════════════════════════════════ */
+.final-cta{
+  text-align:center;padding:120px 24px;
+  background:radial-gradient(ellipse 60% 50% at 50% 60%,var(--c-blue-glow),transparent);
+}
+.final-cta h2{font-size:clamp(26px,4vw,40px);font-weight:800;margin-bottom:16px}
+.final-cta p{font-size:17px;color:var(--c-text-secondary);margin-bottom:40px;line-height:1.6}
+
+/* ═══════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════ */
+footer{border-top:1px solid var(--c-border);padding:40px 24px;text-align:center}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.footer-links a{font-size:14px;color:var(--c-text-dim);transition:color .2s}
+.footer-links a:hover{color:var(--c-text)}
+.footer-copy{font-size:13px;color:var(--c-text-dim)}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media(max-width:768px){
+  .problem-grid,.steps-grid,.audience-grid,.why-grid{grid-template-columns:1fr}
+  .section{padding:72px 0}
+  .hero-content{padding:100px 20px 60px}
+  .nav-cta{display:none}
+  .stats-grid{gap:32px}
+  .accent-strip{margin:-20px 20px 0;padding:24px 20px}
+  .channel-card{min-width:260px}
+}
+@media(max-width:480px){
+  .btn{padding:14px 32px;font-size:15px}
+  .cta-group{flex-direction:column;align-items:center}
+}
+
+/* ═══ SCHEMA.ORG (hidden) ═══ */
+.schema-org{display:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <img src="img/logo-main.jpg" alt="БАЗА-99" loading="lazy">
+      <span>БАЗА-99</span>
+    </a>
+    <a href="https://t.me/base_99_bot?start=utm_source-landing_utm_medium-nav_utm_campaign-base99" class="nav-cta" target="_blank" rel="noopener">Открыть бота →</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero" id="hero">
+  <div class="hero-bg" role="presentation"></div>
+  <div class="hero-grad" role="presentation"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span> Работает в Telegram</div>
+    <h1>Соединяем тех, у&nbsp;кого есть — с&nbsp;теми, кто&nbsp;ищет</h1>
+    <p class="hero-gen">Доска объявлений нового поколения</p>
+    <p>Запчасти, узлы, агрегаты и&nbsp;системы для&nbsp;коммерческого транспорта и&nbsp;спецтехники. AI&#8209;бот. Без&nbsp;регистрации. Бесплатно.</p>
+    <div class="cta-group">
+      <a href="https://t.me/base_99_bot?start=utm_source-landing_utm_medium-hero_utm_campaign-base99" class="btn btn-primary" target="_blank" rel="noopener">🚀 Открыть бота</a>
+      <a href="#how" class="btn btn-ghost">Как это работает ↓</a>
+    </div>
+    <p class="hero-note">Telegram уже есть — больше ничего не нужно</p>
+  </div>
+</header>
+
+<!-- ═══ STATS BAR ═══ -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Бот работает</div></div>
+    <div class="stat"><div class="stat-num">~2 мин</div><div class="stat-label">На публикацию</div></div>
+    <div class="stat"><div class="stat-num">AI</div><div class="stat-label">Авто-карточки</div></div>
+    <div class="stat"><div class="stat-num">0 ₽</div><div class="stat-label">Бесплатно</div></div>
+  </div>
+</div>
+
+<!-- ═══ ПРОБЛЕМА ═══ -->
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Проблема</div>
+      <h2 class="section-title">Звучит знакомо?</h2>
+    </div>
+    <div class="problem-grid">
+      <article class="problem-card">
+        <img src="img/problem-seller.jpg" alt="Запчасти на складе" loading="lazy">
+        <div class="problem-body">
+          <span class="problem-tag tag-red">Продавец</span>
+          <h3>Запчасти лежат без&nbsp;дела</h3>
+          <p>Переоборудовали технику, купили не&nbsp;ту&nbsp;деталь, сняли при&nbsp;ремонте&nbsp;— узлы, системы и&nbsp;агрегаты пылятся на&nbsp;складе месяцами. Действующие площадки не&nbsp;заточены под&nbsp;это&nbsp;— объявления теряются среди легковушек.</p>
+        </div>
+      </article>
+      <article class="problem-card">
+        <img src="img/problem-buyer.jpg" alt="Поиск запчастей" loading="lazy">
+        <div class="problem-body">
+          <span class="problem-tag tag-yellow">Покупатель</span>
+          <h3>Деталь нужна вчера</h3>
+          <p>Нужна конкретная деталь на&nbsp;тягач&nbsp;— обзваниваешь разборки, пишешь в&nbsp;десятки чатов. Тратишь день. Иногда два. А&nbsp;техника стоит.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ АКЦЕНТ ═══ -->
+<div class="accent-strip">
+  <p>🔄 <strong>Не магазин. Не перекуп.</strong> БАЗА-99&nbsp;— площадка для тех, у&nbsp;кого остались запчасти, системы и&nbsp;узлы после ремонта, переоборудования или замены. Б/У и&nbsp;снятое&nbsp;— в&nbsp;нужные руки.</p>
+</div>
+
+<!-- ═══ КАК РАБОТАЕТ ═══ -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Процесс</div>
+      <h2 class="section-title">Как это работает</h2>
+      <p class="section-sub">Четыре шага от фото до сделки</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card" data-step="1">
+        <h3>Опишите деталь</h3>
+        <p>Пишите как&nbsp;обычно&nbsp;— «КПП с&nbsp;Вольво FH12, пробег 500&nbsp;тыс.» Добавьте фото. AI сам разберёт и&nbsp;сформирует карточку.</p>
+      </div>
+      <div class="step-card" data-step="2">
+        <h3>Публикация в&nbsp;канал</h3>
+        <p>Объявление уходит в&nbsp;@base99_sell с&nbsp;фото и&nbsp;структурой. Попадает в&nbsp;поиск по&nbsp;базе.</p>
+      </div>
+      <div class="step-card" data-step="3">
+        <h3>Связь через бота</h3>
+        <p>Контакты скрыты. Только вы&nbsp;решаете&nbsp;— кому отвечать. Никакого спама.</p>
+      </div>
+      <div class="step-card" data-step="4">
+        <h3>Умный мониторинг</h3>
+        <p>Настройте фильтр один раз&nbsp;— бот сам пришлёт, когда появится нужная деталь.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ДЛЯ КОГО ═══ -->
+<section class="section audience-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Аудитория</div>
+      <h2 class="section-title">Для кого</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-icon">🏭</div>
+        <div><h3>Разборки и склады</h3><p>Продавайте быстро, без хаотичных чатов</p></div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">🚛</div>
+        <div><h3>Транспортные компании</h3><p>Нужная деталь за минуты, залежавшееся — в деньги</p></div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">🔧</div>
+        <div><h3>Мастерские</h3><p>Снятые детали — в деньги</p></div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">📦</div>
+        <div><h3>Дилеры</h3><p>Дополнительный канал сбыта без комиссий</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ПОЧЕМУ БАЗА-99 ═══ -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Преимущества</div>
+      <h2 class="section-title">Почему БАЗА-99</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <div><h3>2 минуты на публикацию</h3><p>AI форматирует карточку — не нужно заполнять 15 полей</p></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <div><h3>Только коммерческий транспорт</h3><p>Тягачи, прицепы, грузовики, спецтехника — ничего лишнего</p></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔔</div>
+        <div><h3>Бот сам найдёт</h3><p>Умный мониторинг — пуш когда появится нужное</p></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛡</div>
+        <div><h3>Без спама и мусора</h3><p>AI проверяет каждое объявление и фото</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ КАНАЛЫ ═══ -->
+<section class="section" id="channels">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Каналы</div>
+      <h2 class="section-title">Следите за обновлениями</h2>
+    </div>
+    <div class="channels-grid">
+      <div class="channel-card channel-sell">
+        <img src="img/logo-sell.jpg" alt="Продажа" class="channel-logo" loading="lazy">
+        <h3>Продаю</h3>
+        <p>Актуальные объявления о&nbsp;продаже запчастей, узлов и&nbsp;агрегатов</p>
+        <a href="https://t.me/base99_sell" class="channel-link link-red" target="_blank" rel="noopener">@base99_sell →</a>
+      </div>
+      <div class="channel-card channel-buy">
+        <img src="img/logo-buy.jpg" alt="Ищу" class="channel-logo" loading="lazy">
+        <h3>Ищу</h3>
+        <p>Разместите запрос — продавцы сами откликнутся</p>
+        <a href="https://t.me/base99_buy" class="channel-link link-yellow" target="_blank" rel="noopener">@base99_buy →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ФИНАЛЬНЫЙ CTA ═══ -->
+<section class="final-cta">
+  <h2>Попробуйте прямо сейчас</h2>
+  <p>Бесплатно. Без регистрации на сайте.<br>Telegram уже есть — больше ничего не нужно.</p>
+  <a href="https://t.me/base_99_bot?start=utm_source-landing_utm_medium-footer_utm_campaign-base99" class="btn btn-primary" target="_blank" rel="noopener">🚀 Открыть @base_99_bot</a>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-links">
+    <a href="https://t.me/base_99_bot" target="_blank" rel="noopener">@base_99_bot</a>
+    <a href="https://t.me/base99_sell" target="_blank" rel="noopener">@base99_sell</a>
+    <a href="https://t.me/base99_buy" target="_blank" rel="noopener">@base99_buy</a>
+  </div>
+  <p class="footer-copy">БАЗА-99 · Беларусь · Работает с апреля 2026</p>
+</footer>
+
+<!-- NAV scroll effect -->
+<script>
+const nav=document.getElementById('nav');
+let ticking=false;
+window.addEventListener('scroll',()=>{
+  if(!ticking){window.requestAnimationFrame(()=>{
+    nav.classList.toggle('scrolled',window.scrollY>50);
+    ticking=false;
+  });ticking=true}
+},{passive:true});
+</script>
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"БАЗА-99",
+  "description":"Интеллектуальная площадка для продажи и поиска б/у запчастей, узлов и агрегатов коммерческого транспорта и спецтехники",
+  "url":"https://suze-mart.github.io/base99-landing/",
+  "applicationCategory":"BusinessApplication",
+  "operatingSystem":"Telegram",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"BYN"},
+  "author":{"@type":"Organization","name":"БАЗА-99","url":"https://t.me/base_99_bot"}
+}
+</script>
+
+</body>
+</html>
