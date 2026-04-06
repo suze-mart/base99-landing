@@ -9,7 +9,7 @@
 <meta name="description" content="БАЗА-99 — доска объявлений нового поколения. Продайте или найдите б/у запчасти, узлы и агрегаты для тягачей MAN, DAF, Volvo, Scania, Mercedes, Renault, Iveco. Telegram-бот с AI. Бесплатно.">
 <meta name="keywords" content="запчасти коммерческий транспорт, б/у запчасти тягач, купить запчасти грузовик, продать запчасти прицеп, разборка спецтехника, запчасти MAN, запчасти DAF, запчасти Volvo, запчасти Scania, запчасти Mercedes Actros, запчасти Renault, запчасти Iveco, КПП тягач, мост грузовик, двигатель б/у, гидравлика спецтехника, доска объявлений запчасти, Беларусь запчасти грузовик">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<link rel="canonical" href="https://suze-mart.github.io/base99-landing/">
+<link rel="canonical" href="https://baza99.scepka.by/">
 <meta name="theme-color" content="#09090b">
 
 <!-- Open Graph -->
@@ -17,17 +17,17 @@
 <meta property="og:site_name" content="БАЗА-99">
 <meta property="og:title" content="БАЗА-99 — б/у запчасти для коммерческого транспорта">
 <meta property="og:description" content="Доска объявлений нового поколения. Продайте или найдите запчасти для тягачей, грузовиков, прицепов и спецтехники. AI-бот в Telegram. Бесплатно.">
-<meta property="og:image" content="https://suze-mart.github.io/base99-landing/img/logo-hero.png">
+<meta property="og:image" content="https://baza99.scepka.by/img/logo-hero.png">
 <meta property="og:image:width" content="601">
 <meta property="og:image:height" content="415">
-<meta property="og:url" content="https://suze-mart.github.io/base99-landing/">
+<meta property="og:url" content="https://baza99.scepka.by/">
 <meta property="og:locale" content="ru_RU">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="БАЗА-99 — б/у запчасти для коммерческого транспорта">
 <meta name="twitter:description" content="Доска объявлений нового поколения. AI-бот в Telegram. Бесплатно.">
-<meta name="twitter:image" content="https://suze-mart.github.io/base99-landing/img/logo-hero.png">
+<meta name="twitter:image" content="https://baza99.scepka.by/img/logo-hero.png">
 
 <!-- Yandex / Google -->
 <meta name="google" content="notranslate">
@@ -44,6 +44,17 @@
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="img/logo-hero.png">
 <link rel="apple-touch-icon" href="img/logo-main.jpg">
+
+<!-- Yandex.Metrika -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(108421411,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108421411" style="position:absolute;left:-9999px" alt=""></div></noscript>
 
 <style>
 /* ═══════════════════════════════════════
@@ -582,6 +593,16 @@ window.addEventListener('scroll',()=>{
     ticking=false;
   });ticking=true}
 },{passive:true});
+
+// Yandex.Metrika goals — track CTA clicks
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href*="t.me/base_99_bot"]');
+  if(a){ym(108421411,'reachGoal','click_bot');return}
+  a=e.target.closest('a[href*="t.me/base99_sell"]');
+  if(a){ym(108421411,'reachGoal','click_sell_channel');return}
+  a=e.target.closest('a[href*="t.me/base99_buy"]');
+  if(a){ym(108421411,'reachGoal','click_buy_channel')}
+});
 </script>
 
 <!-- Schema.org: WebApplication -->
@@ -593,13 +614,13 @@ window.addEventListener('scroll',()=>{
   "alternateName":"База-99",
   "headline":"Доска объявлений нового поколения — б/у запчасти для коммерческого транспорта",
   "description":"Продайте или найдите б/у запчасти, узлы и агрегаты для тягачей MAN, DAF, Volvo, Scania, Mercedes, Renault, Iveco. AI-бот в Telegram. Бесплатно.",
-  "url":"https://suze-mart.github.io/base99-landing/",
+  "url":"https://baza99.scepka.by/",
   "applicationCategory":"BusinessApplication",
   "operatingSystem":"Telegram",
   "inLanguage":"ru",
   "offers":{"@type":"Offer","price":"0","priceCurrency":"BYN","availability":"https://schema.org/InStock"},
   "author":{"@type":"Organization","name":"БАЗА-99","url":"https://t.me/base_99_bot"},
-  "image":"https://suze-mart.github.io/base99-landing/img/logo-hero.png"
+  "image":"https://baza99.scepka.by/img/logo-hero.png"
 }
 </script>
 <!-- Schema.org: FAQPage (SEO boost) -->
