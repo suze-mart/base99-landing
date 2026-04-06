@@ -242,8 +242,9 @@ a{color:inherit;text-decoration:none}
 }
 .audience-card:hover{transform:translateY(-2px);border-color:var(--c-border-light)}
 .audience-icon{font-size:32px;flex-shrink:0;line-height:1}
-.audience-card h3{font-size:15px;font-weight:700;margin-bottom:4px}
-.audience-card p{font-size:14px;color:var(--c-text-secondary)}
+.audience-card h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.audience-card p{font-size:14px;color:var(--c-text-secondary);margin-bottom:4px}
+.audience-cta{color:var(--c-text);font-weight:600;margin-top:6px;margin-bottom:0}
 
 /* ═══════════════════════════════════════
    WHY (block 5)
@@ -438,19 +439,33 @@ footer{border-top:1px solid var(--c-border);padding:40px 24px;text-align:center}
     <div class="audience-grid">
       <div class="audience-card">
         <div class="audience-icon">🚛</div>
-        <div><h3>Зависло на складе</h3><p>Переоборудовали, списали, купили не&nbsp;то&nbsp;— деталь рабочая, а&nbsp;места занимает. Продай тем, кто ищет прямо сейчас.</p></div>
+        <div>
+          <h3>Зависло на складе?</h3>
+          <p>Переоборудовали, списали, купили не&nbsp;то&nbsp;— деталь рабочая, а&nbsp;место занимает.</p>
+          <p class="audience-cta">Продай тем, кто ищет прямо сейчас.</p>
+        </div>
       </div>
       <div class="audience-card">
         <div class="audience-icon">🔩</div>
-        <div><h3>Разобрали технику</h3><p>Не разборка, просто списанная машина или снятые агрегаты. Реализуй там, где смотрят именно за&nbsp;этим.</p></div>
+        <div>
+          <h3>Разобрали технику или нужно продать целиком?</h3>
+          <p class="audience-cta">Реализуй там, где смотрят именно за&nbsp;этим.</p>
+        </div>
       </div>
       <div class="audience-card">
         <div class="audience-icon">🔎</div>
-        <div><h3>Нужна деталь</h3><p>Техника стоит&nbsp;— некогда обзванивать всех. Размести «Ищу», и&nbsp;те у&nbsp;кого есть&nbsp;— найдут тебя сами.</p></div>
+        <div>
+          <h3>Нужна деталь, но некогда обзванивать всех?</h3>
+          <p class="audience-cta">Размести «Ищу», и&nbsp;те у&nbsp;кого есть&nbsp;— найдут тебя сами.</p>
+        </div>
       </div>
       <div class="audience-card">
         <div class="audience-icon">📡</div>
-        <div><h3>Торгуешь запчастями</h3><p>Мониторь запросы в&nbsp;реальном времени. Бот пришлёт, когда кто-то ищет то, что есть у&nbsp;тебя.</p></div>
+        <div>
+          <h3>Торгуешь запчастями?</h3>
+          <p>Мониторь запросы в&nbsp;реальном времени.</p>
+          <p class="audience-cta">Бот пришлёт, когда кто-то ищет то, что есть у&nbsp;тебя.</p>
+        </div>
       </div>
     </div>
   </div>
